@@ -1,0 +1,31 @@
+<!-- <div class="card" style="width: 30rem;">
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+    <p class="card-text"> </p>
+    <mat-icon>directions_subway</mat-icon>
+  </div>
+</div> -->
+
+<router-outlet></router-outlet>
+
+<table class="table" id="tblData">
+  <tbody>
+    <tr id="trData">
+      <td *ngIf="singleLinkedList.size>0" style="width: 50px;">
+        <mat-icon>directions_subway</mat-icon>
+      </td>
+      <td *ngFor="let el of linkListDatas">
+        <app-single-node [nodeData]="el"></app-single-node>
+      </td>
+
+    </tr>
+  </tbody>
+</table>
+<table *ngIf="singleLinkedList.size>0">
+  <tr>
+    <td><a routerLink="" mat-raised-button color="primary">Add Node</a></td>
+    <td><a routerLink="/delete" mat-raised-button color="primary">Delete Node</a></td>
+    <td><a routerLink="/search" mat-raised-button color="primary">Search Node</a></td>
+  </tr>
+
+</table>

@@ -1,0 +1,39 @@
+<section class="new-training" fxLayout fxLayoutAlign="center">
+  <form #f="ngForm">
+    <mat-card fxFlex.xs="100%" fxFlex="400px">
+      <mat-card-title fxLayoutAlign="center">Add Node</mat-card-title>
+      <!-- <mat-card-title fxLayoutAlign="center" *ngIf="LinkedListData.length == 0">Create LinkedList</mat-card-title> -->
+      <mat-card-content fxLayoutAlign="center">
+        <div class="flex-container">
+          <div>
+
+            <mat-form-field [ngStyle]="{'display': isLoading ? 'none': 'block'}">
+              <input type="number" matInput placeholder="Node Value" required value="0" ngModel name="node" #nData>
+
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field [ngStyle]="{'display': !(singleLinkedList.size > 0 && !isLoading) ? 'none': 'block'}">
+              <!-- <mat-checkbox ngModel name="chkPosition" required color="primary"></mat-checkbox> -->
+              <input type="number" matInput placeholder="Position" name="location"
+                value="{{singleLinkedList.size == 0? 0:singleLinkedList.size}}" #position>
+            </mat-form-field>
+          </div>
+        </div>
+        <div>
+          <mat-spinner *ngIf="isLoading"></mat-spinner>
+        </div>
+      </mat-card-content>
+
+      <mat-card-actions fxLayoutAlign="center">
+        <button type="button" *ngIf="singleLinkedList.size == 0" mat-raised-button color="primary" mat-button
+          (click)="createLinkedList(nData)" [disabled]="f.invalid">Create
+        </button>
+        <button type="button" *ngIf="singleLinkedList.size > 0" mat-raised-button color="primary" mat-button
+          (click)="insertAtLinkedList(nData,position)" [disabled]="f.invalid">Add
+          Node</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </form>
+</section>

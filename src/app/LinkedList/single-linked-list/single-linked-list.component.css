@@ -1,0 +1,22 @@
+/* mat-icon {
+  font-size: 50px;
+  color: firebrick;
+}
+
+.table td {
+  width: 50px;
+} */
+
+.table {
+  padding-top: 50px;
+}
+
+mat-icon {
+  font-size: 60px;
+  color: firebrick;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}

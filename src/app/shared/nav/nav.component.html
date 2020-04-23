@@ -1,0 +1,30 @@
+<!-- <ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="">LinkedList</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="/stack">Stack</a>
+  </li>
+</ul> -->
+
+<mat-toolbar color="primary">
+  <div fxHide.gt-xs>
+    <button mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div>
+    <a routerLink="/">Data Structure</a>
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+    <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+      <li>
+        <a routerLink="">LinkedList</a>
+      </li>
+      <li>
+        <a routerLink="/stack">Stack</a>
+      </li>
+
+    </ul>
+  </div>
+</mat-toolbar>
